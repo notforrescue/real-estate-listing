@@ -1,0 +1,32 @@
+{
+  "name": "real-estate-listing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint src && tsc",
+    "build": "vite build",
+    "start": "vite preview"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "3.3.3",
+    "sass": "^1.79.5",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^7.0.1",
+    "vite": "^5.1.4",
+    "vite-plugin-pretty-css-modules": "^0.1.3"
+  }
+}

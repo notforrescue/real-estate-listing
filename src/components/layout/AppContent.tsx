@@ -1,20 +1,14 @@
-import { FC, PropsWithChildren } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import type { FC, PropsWithChildren } from 'react'
+import { Outlet } from 'react-router-dom'
+import Navigation from '../navigation/Navigation'
 
-const AppContent: FC<PropsWithChildren> = ({ children }) => (
+const AppContent: FC<PropsWithChildren> = () => (
   <div className={'app-content container-fluid pb-4 pt-4'}>
     <div className={'row'}>
       <div className={'col-3 container'}>
         <nav className={'bg-white shadow rounded'}>
           <div className={'container pb-4 pt-4'}>
-            <ul className="nav flex-column">
-              <li className="nav-item">
-                <NavLink to={`/`}>Main</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to={`/favorites`}>Favorites</NavLink>
-              </li>
-            </ul>
+            <Navigation />
           </div>
         </nav>
       </div>

@@ -7,9 +7,9 @@ const RealEstatesList = () => {
   return (
     <>
       {realEstates &&
-        realEstates.ads.map(({ adId, address, image }) => (
-          <div key={adId} style={{ maxHeight: '300px', display: 'flex' }}>
-            <Card title={address} imageUrl={image}></Card>
+        realEstates.ads.map(({ adId, address, image, price }) => (
+          <div key={adId} className={'list-card w-100 d-flex'}>
+            <Card title={address} imageUrl={image} price={price}></Card>
           </div>
         ))}
     </>

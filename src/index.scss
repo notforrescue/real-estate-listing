@@ -1,13 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+$primary: #323ec8;
+
 :root {
   --bs-body-bg: #fafbff;
   --bs-border-radius: 16px;
-  --bs-box-shadow: 0 0 100px #323ec833;
+  --bs-box-shadow: 0 0 10px #323ec833;
+
+  --bs-btn-bg: #ebecfa;
+  --bs-font-sans-serif: 'Red Hat Display';
+}
+
+// Card
+.list-card {
+  height: 180px;
+
+  .list-card-image {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .list-card {
+    height: 247px;
+
+    .list-card-image {
+      height: 140px;
+    }
+  }
+}
+// Card
+
+.nav {
+  .nav-item:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.nav-item {
+  .btn-primary {
+    background: none;
+    height: 44px;
+    i {
+      margin-right: 14px;
+    }
+
+    &:hover {
+      background: #ebecfa;
+      color: $primary;
+    }
+  }
+}
+
+.btn-primary {
+  color: $primary;
+  background: #ebecfa;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+
+  &.active {
+    font-weight: 700;
+    background: #ebecfa;
+    color: $primary;
+  }
 }
 
 .app {
   min-height: 100vh;
-}
-
-body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }

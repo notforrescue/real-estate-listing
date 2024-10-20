@@ -3,6 +3,8 @@ export interface IContactResponse {
   parsedPhoneNumbers: string[]
 }
 
+export type checkedType = 'checked' | 'unchecked'
+
 export interface IRealEstate {
   adId: number
   address: string
@@ -11,7 +13,7 @@ export interface IRealEstate {
   currency: string
   uploadDate: string
   description: string
-  status: string
+  status: checkedType
   contact: IContactResponse
 }
 

@@ -1,19 +1,21 @@
 import { FC, PropsWithChildren } from 'react'
 import { formatCurrency } from '../../utils/numberFormatter'
-import { StarFill } from 'react-bootstrap-icons'
-import Icon from '../icon/Icon'
-import { Button } from 'react-bootstrap'
+import AddToFavoriteButton from '../buttons/AddToFavoriteButton'
 
 interface ICardProps {
   title: string
   price: number
   imageUrl: string
+  isChecked: boolean
+  onAddToFavoriteButtonClick: (target: any) => void
 }
 
 const Card: FC<PropsWithChildren<ICardProps>> = ({
   title,
   imageUrl,
   price,
+  isChecked,
+  onAddToFavoriteButtonClick,
 }) => {
   return (
     <div className="card mb-3 rounded shadow border-0 overflow-hidden w-100">
@@ -49,16 +51,10 @@ const Card: FC<PropsWithChildren<ICardProps>> = ({
                   {/*</p>*/}
                 </div>
                 <div className={'col-2 d-flex justify-content-lg-end'}>
-                  <Button
-                    className={
-                      'bg-white btn btn-square-md shadow border-0 rounded-1 p-0'
-                    }
-                    style={{ width: '34px', height: '34px' }}
-                  >
-                    <Icon size={18}>
-                      <StarFill color={'red'} />
-                    </Icon>
-                  </Button>
+                  <AddToFavoriteButton
+                    onClick={onAddToFavoriteButtonClick}
+                    isChecked={isChecked}
+                  />
                 </div>
               </div>
             </div>

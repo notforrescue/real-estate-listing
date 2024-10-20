@@ -1,6 +1,7 @@
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Router from './components/router/Router'
+import RealEstateProvider from './context/realEstatesContext/RealEstateProvider'
 
 export default function App() {
   return (
@@ -14,7 +15,9 @@ export default function App() {
           </div>
         </nav>
       </Header>
-      <Router />
+      <RealEstateProvider>
+        <Router />
+      </RealEstateProvider>
       <Footer></Footer>
     </div>
   )

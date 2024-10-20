@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 /**
  * Hook for getting the data from a promise
  * Also includes error handling
- * @param fetcher
+ * @param fetcher promise
  */
 const useGetData = <T>(fetcher: () => Promise<T>) => {
   const [data, setData] = useState<T>()

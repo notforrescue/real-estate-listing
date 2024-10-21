@@ -19,6 +19,7 @@ const realEstateReducer = (
       const realEstateToUpdate = newArray[index]
 
       realEstateToUpdate.status = toggleChecked(realEstateToUpdate.status)
+      realEstateToUpdate.addedToFavsDate = new Date()
 
       return {
         ...state,

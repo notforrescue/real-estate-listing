@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AppContent from '../layout/AppContent'
 import Home from '../pages/Home'
-import Favorites from '../pages/Favorites'
+import Favorites from '../pages/Favorites/Favorites'
 
 const routerDefinitions = createBrowserRouter([
   {

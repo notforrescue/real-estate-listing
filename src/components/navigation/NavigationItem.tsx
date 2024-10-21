@@ -1,10 +1,11 @@
 import { type NavLinkProps, NavLink } from 'react-router-dom'
-import { type Icon } from 'react-bootstrap-icons'
+import { type Icon as IconType } from 'react-bootstrap-icons'
 import { FC, PropsWithChildren, ReactElement } from 'react'
+import Icon from '../icon/Icon'
 
 interface INavigationItemProps {
   to: NavLinkProps['to']
-  icon: ReactElement<Icon>
+  icon: ReactElement<IconType>
 }
 
 const NavigationItem: FC<PropsWithChildren<INavigationItemProps>> = ({
@@ -20,9 +21,7 @@ const NavigationItem: FC<PropsWithChildren<INavigationItemProps>> = ({
           'btn d-flex btn-primary btn-lg border-0 w-100 align-items-center'
         }
       >
-        <i className={'d-flex'} style={{ fontSize: '18px' }}>
-          {icon}
-        </i>
+        <Icon size={18}>{icon}</Icon>
         {children}
       </NavLink>
     </li>

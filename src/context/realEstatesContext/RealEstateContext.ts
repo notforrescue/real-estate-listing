@@ -3,7 +3,7 @@ import type { IRealEstateResponse } from '../../api/realEstate/types'
 import { createContext, useContext } from 'react'
 
 export interface IRealEstateContext {
-  state: IRealEstateResponse
+  state: IRealEstateResponse | undefined
   dispatcher: realEstateDispatcherType
 }
 

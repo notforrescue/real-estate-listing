@@ -16,9 +16,10 @@ const Card: FC<PropsWithChildren<ICardProps>> = ({
   price,
   isChecked,
   onAddToFavoriteButtonClick,
+  children,
 }) => {
   return (
-    <div className="card mb-3 rounded shadow border-0 overflow-hidden w-100">
+    <div className="card mb-3 rounded bg-white shadow border-0 overflow-hidden w-100">
       <div className="row no-gutters h-100">
         <div className="list-card-image col-md-4 d-flex align-items-center justify-content-center">
           <img
@@ -46,9 +47,7 @@ const Card: FC<PropsWithChildren<ICardProps>> = ({
                   {/*  lead-in to additional content. This content is a little bit*/}
                   {/*  longer.*/}
                   {/*</p>*/}
-                  {/*<p className="card-text">*/}
-                  {/*  <small className="text-muted">Last updated 3 mins ago</small>*/}
-                  {/*</p>*/}
+                  {children}
                 </div>
                 <div className={'col-2 d-flex justify-content-lg-end'}>
                   <AddToFavoriteButton

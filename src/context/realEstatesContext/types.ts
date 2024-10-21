@@ -1,7 +1,9 @@
 import React from 'react'
 import { IRealEstate, IRealEstateResponse } from '../../api/realEstate/types'
 
-export interface IRealEstateState extends IRealEstateResponse {}
+export interface IRealEstateState {
+  ads: IRealEstate[]
+}
 
 export type realEstateReducerActionType =
   | {

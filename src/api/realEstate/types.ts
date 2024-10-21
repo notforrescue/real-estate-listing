@@ -15,8 +15,9 @@ export interface IRealEstate {
   description: string
   status: checkedType
   contact: IContactResponse
+  addedToFavsDate?: Date
 }
 
 export interface IRealEstateResponse {
-  ads: IRealEstate[]
+  ads: Omit<IRealEstate, 'addedToFavsDate'>[]
 }

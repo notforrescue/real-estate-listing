@@ -1,19 +1,24 @@
+import { FC } from 'react'
 import Card from '../card/Card'
-import useGetRealEstates from '../../hooks/useGetRealEstates'
 import { useRealEstateContext } from '../../context/realEstatesContext/RealEstateContext'
 import { addToFavorites } from '../../context/realEstatesContext/actions'
+import { IRealEstate } from '../../api/realEstate/types'
 
-const RealEstatesList = () => {
-  const { data: realEstates, error } = useGetRealEstates()
+interface IRealEstatesListProps {
+  realEstates: IRealEstate[]
+  cardContentRenderer?: FC
+}
 
-  const { state, dispatcher } = useRealEstateContext()
-
-  console.log(state)
+const RealEstatesList: FC<IRealEstatesListProps> = ({
+  realEstates,
+  cardContentRenderer,
+}) => {
+  const { dispatcher } = useRealEstateContext()
 
   return (
     <>
       {realEstates &&
-        realEstates.ads.map((realEstate) => (
+        realEstates.map((realEstate) => (
           <div key={realEstate.adId} className={'list-card w-100 d-flex'}>
             <Card
               title={realEstate.address}
@@ -23,7 +28,9 @@ const RealEstatesList = () => {
               onAddToFavoriteButtonClick={() =>
                 dispatcher(addToFavorites(realEstate))
               }
-            ></Card>
+            >
+              {cardContentRenderer && cardContentRenderer(realEstate)}
+            </Card>
           </div>
         ))}
     </>

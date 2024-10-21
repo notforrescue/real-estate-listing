@@ -1,8 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AppContent from '../layout/AppContent'
-import Home from '../pages/Home'
-import Favorites from '../pages/Favorites/Favorites'
-import Details from '../pages/Details/Details'
+import { lazy } from 'react'
+import LazyLoadComponent from '../lazy/LazyLoadComponent'
+
+const Home = lazy(() => import('../pages/Home/Home'))
+const Favorites = lazy(() => import('../pages/Favorites/Favorites'))
+const Details = lazy(() => import('../pages/Details/Details'))
 
 const routerDefinitions = createBrowserRouter([
   {
@@ -11,15 +14,27 @@ const routerDefinitions = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: (
+          <LazyLoadComponent>
+            <Home />
+          </LazyLoadComponent>
+        ),
       },
       {
         path: '/favorites',
-        element: <Favorites />,
+        element: (
+          <LazyLoadComponent>
+            <Favorites />
+          </LazyLoadComponent>
+        ),
       },
       {
         path: 'real-estates/:adId',
-        element: <Details />,
+        element: (
+          <LazyLoadComponent>
+            <Details />
+          </LazyLoadComponent>
+        ),
       },
     ],
   },

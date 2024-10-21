@@ -44,7 +44,7 @@ const Favorites: FC = () => {
       </TopBar>
       <RealEstatesList
         realEstates={favoriteRealEstates}
-        cardContentRenderer={AddedToFavoritesDate}
+        cardContentRenderer={<AddedToFavoritesDate />}
       />
     </>
   )

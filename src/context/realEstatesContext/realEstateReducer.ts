@@ -1,9 +1,5 @@
 import { IRealEstateState, realEstateReducerActionType } from './types'
-import { checkedType } from '../../api/realEstate/types'
-
-const toggleChecked = (status: checkedType) => {
-  return status === 'checked' ? 'unchecked' : 'checked'
-}
+import toggleChecked from '../../utils/toggleChecked'
 
 const realEstateReducer = (
   state: IRealEstateState,

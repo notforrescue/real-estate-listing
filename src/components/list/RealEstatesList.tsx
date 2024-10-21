@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { cloneElement, FC, ReactElement } from 'react'
 import Card from '../card/Card'
 import { useRealEstateContext } from '../../context/realEstatesContext/RealEstateContext'
 import { addToFavorites } from '../../context/realEstatesContext/actions'
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 interface IRealEstatesListProps {
   realEstates: IRealEstate[]
-  cardContentRenderer?: FC
+  cardContentRenderer?: ReactElement
 }
 
 const RealEstatesList: FC<IRealEstatesListProps> = ({
@@ -38,7 +38,10 @@ const RealEstatesList: FC<IRealEstatesListProps> = ({
                 </Link>
               }
             >
-              {cardContentRenderer && cardContentRenderer(realEstate)}
+              {cardContentRenderer &&
+                cloneElement(cardContentRenderer, {
+                  extraProp: 'Some extra prop',
+                })}
             </Card>
           </div>
         ))}

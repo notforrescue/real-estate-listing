@@ -1,7 +1,7 @@
 import type { FC } from 'react'
-import RealEstatesList from '../list/RealEstatesList'
-import TopBar from '../layout/TopBar'
-import { useRealEstateContext } from '../../context/realEstatesContext/RealEstateContext'
+import RealEstatesList from '../../list/RealEstatesList'
+import TopBar from '../../layout/TopBar'
+import { useRealEstateContext } from '../../../context/realEstatesContext/RealEstateContext'
 
 const Home: FC = () => {
   const { state: realEstates } = useRealEstateContext()

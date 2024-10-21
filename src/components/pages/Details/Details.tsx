@@ -27,12 +27,15 @@ const Details: FC = () => {
       >
         <Icon size={18}>
           <ArrowLeft />
-        </Icon>{' '}
+        </Icon>
         Vissza
       </Button>
       {realEstate && (
         <>
-          <div className={'d-flex overflow-hidden mw-100 rounded mb-4'}>
+          <div
+            className={'d-flex overflow-hidden mw-100 rounded mb-4'}
+            style={{ maxHeight: ' 400px' }}
+          >
             <img
               src={realEstate.image}
               loading="lazy"
@@ -52,7 +55,7 @@ const Details: FC = () => {
             }
             hideImage={true}
           >
-            {RealEstateDetails(realEstate)}
+            <RealEstateDetails realEstate={realEstate} />
           </Card>
         </>
       )}

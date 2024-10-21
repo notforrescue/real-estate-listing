@@ -23,7 +23,7 @@ const Card: FC<PropsWithChildren<ICardProps>> = ({
   children,
 }) => {
   return (
-    <div className="card mb-3 rounded bg-white shadow border-0 overflow-hidden w-100">
+    <div className="card rounded bg-white shadow border-0 overflow-hidden w-100">
       <div className="row no-gutters h-100">
         {!hideImage && (
           <div className="list-card-image col-md-4 d-flex align-items-center justify-content-center">

@@ -9,6 +9,7 @@ $primary: #323ec8;
   --bs-body-bg: #fafbff;
   --bs-border-radius: 16px;
   --bs-box-shadow: 0 0 10px #323ec833;
+  --bs-link-color: black;
 
   --bs-btn-bg: #ebecfa;
   --bs-font-sans-serif: 'Red Hat Display';
@@ -20,6 +21,16 @@ $primary: #323ec8;
   .list-card-image {
     height: 100%;
     overflow: hidden;
+  }
+}
+
+h2 {
+  a {
+    color: $body-color;
+
+    &:hover {
+      color: $primary;
+    }
   }
 }
 
@@ -42,6 +53,15 @@ $primary: #323ec8;
 
   h5 {
     font-size: 1em;
+  }
+
+  .padding-md-0 {
+    padding: 0;
+  }
+
+  .detail-image,
+  .details-page .card {
+    border-radius: 0 !important;
   }
 }
 

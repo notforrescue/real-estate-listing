@@ -10,14 +10,14 @@ const Navigation: FC<INavigationProps> = ({ handleOnClick }) => {
   return (
     <ul className="nav flex-column">
       <NavigationItem to={'/'} icon={<ListUl />} handleOnClick={handleOnClick}>
-        List
+        Lista
       </NavigationItem>
       <NavigationItem
         to={'/favorites'}
         icon={<StarFill />}
         handleOnClick={handleOnClick}
       >
-        Favorites
+        Kedvencek
       </NavigationItem>
     </ul>
   )

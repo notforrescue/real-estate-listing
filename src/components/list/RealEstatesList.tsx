@@ -21,7 +21,7 @@ const RealEstatesList: FC<IRealEstatesListProps> = ({
     <>
       {realEstates ? (
         realEstates.map((realEstate) => (
-          <div key={realEstate.adId} className={'list-card w-100 d-flex'}>
+          <div key={realEstate.adId} className={'list-card w-100 mb-3 d-flex'}>
             <Card
               title={realEstate.address}
               imageUrl={realEstate.image}
@@ -33,7 +33,7 @@ const RealEstatesList: FC<IRealEstatesListProps> = ({
               titleElement={
                 <Link
                   to={`/real-estates/${realEstate.adId}`}
-                  style={{ color: 'black', textDecoration: 'none' }}
+                  style={{ textDecoration: 'none' }}
                 >
                   {realEstate.address}
                 </Link>

@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AppContent from '../layout/AppContent'
 import { lazy } from 'react'
 import LazyLoadComponent from '../lazy/LazyLoadComponent'
+import ListLayout from '../layout/ListLayout'
 
 const Home = lazy(() => import('../pages/Home/Home'))
 const Favorites = lazy(() => import('../pages/Favorites/Favorites'))
@@ -10,7 +11,7 @@ const Details = lazy(() => import('../pages/Details/Details'))
 const routerDefinitions = createBrowserRouter([
   {
     path: '/',
-    element: <AppContent />,
+    element: <ListLayout />,
     children: [
       {
         path: '/',
@@ -28,15 +29,15 @@ const routerDefinitions = createBrowserRouter([
           </LazyLoadComponent>
         ),
       },
-      {
-        path: '/real-estates/:adId',
-        element: (
-          <LazyLoadComponent>
-            <Details />
-          </LazyLoadComponent>
-        ),
-      },
     ],
+  },
+  {
+    path: '/real-estates/:adId',
+    element: (
+      <LazyLoadComponent>
+        <Details />
+      </LazyLoadComponent>
+    ),
   },
 ])
 

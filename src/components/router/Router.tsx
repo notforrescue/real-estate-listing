@@ -29,7 +29,7 @@ const routerDefinitions = createBrowserRouter([
         ),
       },
       {
-        path: 'real-estates/:adId',
+        path: '/real-estates/:adId',
         element: (
           <LazyLoadComponent>
             <Details />

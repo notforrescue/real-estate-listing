@@ -4,6 +4,7 @@ import { useRealEstateContext } from '../../context/realEstatesContext/RealEstat
 import { addToFavorites } from '../../context/realEstatesContext/actions'
 import { IRealEstate } from '../../api/realEstate/types'
 import { Link } from 'react-router-dom'
+import Skeleton from '../skeleton/Skeleton'
 
 interface IRealEstatesListProps {
   realEstates: IRealEstate[]
@@ -18,7 +19,7 @@ const RealEstatesList: FC<IRealEstatesListProps> = ({
 
   return (
     <>
-      {realEstates &&
+      {realEstates ? (
         realEstates.map((realEstate) => (
           <div key={realEstate.adId} className={'list-card w-100 d-flex'}>
             <Card
@@ -40,11 +41,14 @@ const RealEstatesList: FC<IRealEstatesListProps> = ({
             >
               {cardContentRenderer &&
                 cloneElement(cardContentRenderer, {
-                  extraProp: 'Some extra prop',
+                  ...realEstate,
                 })}
             </Card>
           </div>
-        ))}
+        ))
+      ) : (
+        <Skeleton />
+      )}
     </>
   )
 }

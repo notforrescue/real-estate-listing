@@ -4,6 +4,7 @@ import Navigation from '../navigation/Navigation'
 import useGetRealEstates from '../../hooks/useGetRealEstates'
 import Header from './Header'
 import Footer from './Footer'
+import withSnackBarProvider from '../snackBar/withSnackBarProvider'
 
 const AppContent: FC<PropsWithChildren> = () => {
   useGetRealEstates()
@@ -30,4 +31,4 @@ const AppContent: FC<PropsWithChildren> = () => {
   )
 }
 
-export default AppContent
+export default withSnackBarProvider(AppContent)

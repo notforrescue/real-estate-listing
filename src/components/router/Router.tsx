@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AppContent from '../layout/AppContent'
 import { lazy } from 'react'
 import LazyLoadComponent from '../lazy/LazyLoadComponent'
 import ListLayout from '../layout/ListLayout'

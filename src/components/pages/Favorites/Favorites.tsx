@@ -23,23 +23,19 @@ const Favorites: FC = () => {
   return (
     <>
       <TopBar title={'Kedvencek'} counter={favoriteRealEstates?.length}>
-        <div className="container">
-          <div className="row">
-            <div className="col-sm">
-              <SortButton
-                handleSort={handleSortByName}
-                sortDirection={sortedByNameStatus}
-                title={'cím'}
-              />
-            </div>
-            <div className="col-sm">
-              <SortButton
-                handleSort={handleSortByDate}
-                sortDirection={sortedByDateStatus}
-                title={'dátum'}
-              />
-            </div>
-          </div>
+        <div className="container d-flex">
+          <SortButton
+            handleSort={handleSortByName}
+            sortDirection={sortedByNameStatus}
+            title={'cím'}
+          />
+        </div>
+        <div className="col-sm">
+          <SortButton
+            handleSort={handleSortByDate}
+            sortDirection={sortedByDateStatus}
+            title={'dátum'}
+          />
         </div>
       </TopBar>
       <RealEstatesList

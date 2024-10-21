@@ -3,13 +3,14 @@ import type { IRealEstateWithFavorite } from '../../../../hooks/useGetFavoriteRe
 import { Calendar3Week } from 'react-bootstrap-icons'
 import Icon from '../../../icon/Icon'
 
-const AddedToFavoritesDate: FC = ({
+const RealEstateDetails: FC = ({
   addedToFavsDate,
+  description,
 }: IRealEstateWithFavorite) => {
   return (
     <>
       {addedToFavsDate && (
-        <div className={'d-flex mt-md-3'}>
+        <div className={'d-flex mt-3 mb-4'}>
           <Icon size={16}>
             <Calendar3Week />
           </Icon>
@@ -21,8 +22,12 @@ const AddedToFavoritesDate: FC = ({
           </p>
         </div>
       )}
+
+      <div className={'rounded p-4 bg-light w-100'}>
+        <p>{description}</p>
+      </div>
     </>
   )
 }
 
-export default AddedToFavoritesDate
+export default RealEstateDetails

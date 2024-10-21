@@ -14,7 +14,6 @@ $primary: #323ec8;
   --bs-font-sans-serif: 'Red Hat Display';
 }
 
-// Card
 .list-card {
   height: 180px;
 
@@ -26,14 +25,25 @@ $primary: #323ec8;
 
 @include media-breakpoint-down(md) {
   .list-card {
-    height: 247px;
+    height: 270px;
 
     .list-card-image {
       height: 140px;
     }
   }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
 }
-// Card
 
 .nav {
   .nav-item:last-child {

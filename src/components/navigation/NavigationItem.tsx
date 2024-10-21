@@ -6,12 +6,14 @@ import Icon from '../icon/Icon'
 interface INavigationItemProps {
   to: NavLinkProps['to']
   icon: ReactElement<IconType>
+  handleOnClick?: () => void
 }
 
 const NavigationItem: FC<PropsWithChildren<INavigationItemProps>> = ({
   to,
   icon,
   children,
+  handleOnClick,
 }) => {
   return (
     <li className="nav-item mb-3">
@@ -20,6 +22,7 @@ const NavigationItem: FC<PropsWithChildren<INavigationItemProps>> = ({
         className={
           'btn d-flex btn-primary btn-lg border-0 w-100 align-items-center'
         }
+        onClick={handleOnClick && handleOnClick}
       >
         <Icon size={18}>{icon}</Icon>
         {children}

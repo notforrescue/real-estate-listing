@@ -19,7 +19,7 @@ const TopBar: FC<PropsWithChildren<ITopBarProps>> = ({
       <h4 className={'mb-0'}>{title}</h4>
       <div className={'d-flex align-items-center '}>
         {children}
-        <h6 className={'mb-0 p-2 text-nowrap'}>{counter} db</h6>
+        {!!counter && <h6 className={'mb-0 p-2 text-nowrap'}>{counter} db</h6>}
       </div>
     </div>
   )

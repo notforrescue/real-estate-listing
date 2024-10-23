@@ -28,28 +28,28 @@ const RealEstatesList: FC<IRealEstatesListProps> = ({
                 key={realEstate.adId}
                 className={'list-card w-100 mb-3 d-flex'}
               >
-                <Card
-                  title={realEstate.address}
-                  imageUrl={realEstate.image}
-                  price={realEstate.price}
-                  isChecked={realEstate.status === 'checked'}
-                  onAddToFavoriteButtonClick={() =>
-                    dispatcher(addToFavorites(realEstate))
-                  }
-                  titleElement={
-                    <Link
-                      to={`/real-estates/${realEstate.adId}`}
-                      style={{ textDecoration: 'none' }}
-                    >
-                      {realEstate.address}
-                    </Link>
-                  }
+                <Link
+                  to={`/real-estates/${realEstate.adId}`}
+                  style={{ textDecoration: 'none' }}
+                  className={'w-100'}
                 >
-                  {cardContentRenderer &&
-                    cloneElement(cardContentRenderer, {
-                      ...realEstate,
-                    })}
-                </Card>
+                  <Card
+                    title={realEstate.address}
+                    imageUrl={realEstate.image}
+                    price={realEstate.price}
+                    isChecked={realEstate.status === 'checked'}
+                    onAddToFavoriteButtonClick={(event) => {
+                      event.preventDefault()
+                      dispatcher(addToFavorites(realEstate))
+                    }}
+                    titleElement={realEstate.address}
+                  >
+                    {cardContentRenderer &&
+                      cloneElement(cardContentRenderer, {
+                        ...realEstate,
+                      })}
+                  </Card>
+                </Link>
               </div>
             ))
           ) : (

@@ -1,4 +1,4 @@
-import type { realEstateDispatcherType } from './types'
+import type { realEstateDispatcherType } from '../../store/realEstatesStore/types'
 import type { IRealEstateResponse } from '../../api/realEstate/types'
 import { createContext, useContext } from 'react'
 

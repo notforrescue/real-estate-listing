@@ -4,11 +4,11 @@ import { Calendar3Week } from 'react-bootstrap-icons'
 import Icon from '../../../icon/Icon'
 
 const AddedToFavoritesDate: FC = ({
-  addedToFavsDate,
+  addedToFavoritesDate,
 }: IRealEstateWithFavorite) => {
   return (
     <>
-      {addedToFavsDate && (
+      {addedToFavoritesDate && (
         <div className={'d-flex mt-md-3'}>
           <Icon size={16}>
             <Calendar3Week />
@@ -16,7 +16,7 @@ const AddedToFavoritesDate: FC = ({
 
           <p className="card-text mx-2 ">
             <small className="text-muted">
-              {new Date(addedToFavsDate).toLocaleDateString('hu-HU')}
+              {new Date(addedToFavoritesDate).toLocaleDateString('hu-HU')}
             </small>
           </p>
         </div>

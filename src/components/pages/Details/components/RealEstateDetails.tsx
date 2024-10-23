@@ -15,7 +15,7 @@ const RealEstateDetails: FC<IRealEstateDetailsProps> = ({ realEstate }) => {
 
   return (
     <>
-      {realEstate.addedToFavsDate && (
+      {realEstate.addedToFavoritesDate && (
         <div className={'d-flex mt-3 mb-4'}>
           <Icon size={16}>
             <Calendar3Week />
@@ -23,7 +23,9 @@ const RealEstateDetails: FC<IRealEstateDetailsProps> = ({ realEstate }) => {
 
           <p className="card-text mx-2 ">
             <small className="text-muted">
-              {new Date(realEstate.addedToFavsDate).toLocaleDateString('hu-HU')}
+              {new Date(realEstate.addedToFavoritesDate).toLocaleDateString(
+                'hu-HU'
+              )}
             </small>
           </p>
         </div>

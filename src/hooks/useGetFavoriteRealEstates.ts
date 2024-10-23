@@ -10,7 +10,7 @@ const filterFavorites = (realEstates: IRealEstate[]) => {
 }
 
 export interface IRealEstateWithFavorite extends IRealEstate {
-  addedToFavsDate: Date
+  addedToFavoritesDate: Date
 }
 
 const useGetFavoriteRealEstates = () => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Toast } from 'react-bootstrap'
 import SnackBarContext from './SnackBarContext'
+import SnackBar from '../../components/snackBar/SnackBar'
 
 interface SnackBarContextProviderProps {
   children: React.ReactNode
@@ -9,33 +10,23 @@ interface SnackBarContextProviderProps {
 const SnackBarProvider: React.FC<SnackBarContextProviderProps> = ({
   children,
 }) => {
-  const [open, setOpen] = React.useState<boolean>(false)
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
   const [message, setMessage] = React.useState<string>('')
 
   const showSnackBar = (text: string) => {
     setMessage(text)
-    setOpen(true)
+    setIsOpen(true)
   }
 
   const handleClose = () => {
-    setOpen(false)
+    setIsOpen(false)
   }
 
   return (
     <SnackBarContext.Provider value={{ showSnackBar }}>
       {children}
-      <div
-        className={'position-fixed'}
-        style={{ bottom: '40px', right: '40px' }}
-      >
-        <Toast show={open} onClose={handleClose} delay={4000} autohide>
-          <Toast.Body>
-            <p className={'mb-0'} style={{ color: ' #ed4337' }}>
-              {message}
-            </p>
-          </Toast.Body>
-        </Toast>
-      </div>
+
+      <SnackBar handleClose={handleClose} message={message} isOpen={isOpen} />
     </SnackBarContext.Provider>
   )
 }

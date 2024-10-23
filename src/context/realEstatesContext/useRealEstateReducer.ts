@@ -1,4 +1,4 @@
-import realEstateReducer from './realEstateReducer'
+import realEstateReducer from '../../store/realEstatesStore/realEstateReducer'
 import useReducerWithMiddleware from '../../hooks/useReducerWithMiddleware'
 import { useSessionStorage } from '../../hooks/useLocalStorage'
 import { IRealEstateResponse } from '../../api/realEstate/types'

@@ -13,7 +13,7 @@ const useSortByDate = (
   const handleSortByDate = () => {
     toggleSortByDateStatus()
     setSortedArray(
-      sortByDate([...defaultState], 'addedToFavsDate', sortedByDateStatus)
+      sortByDate([...defaultState], 'addedToFavoritesDate', sortedByDateStatus)
     )
   }
 

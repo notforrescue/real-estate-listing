@@ -3,9 +3,9 @@ import getRealEstates from '../api/realEstate/getRealEstates'
 import useGetData from './useGetData'
 import { useEffect } from 'react'
 import { useSessionStorage } from './useLocalStorage'
-import { setRealEstates } from '../context/realEstatesContext/actions'
+import { setRealEstates } from '../store/realEstatesStore/actions'
 import { useRealEstateContext } from '../context/realEstatesContext/RealEstateContext'
-import useSnackBar from '../components/snackBar/useSnackBar'
+import useSnackBar from '../context/snackBarContext/useSnackBar'
 
 const useGetRealEstates = () => {
   const { data, error } = useGetData<IRealEstateResponse>(getRealEstates)

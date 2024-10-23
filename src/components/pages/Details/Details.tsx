@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import useGetRealEstateById from '../../../hooks/useGetRealEstateById'
-import { addToFavorites } from '../../../context/realEstatesContext/actions'
+import { addToFavorites } from '../../../store/realEstatesStore/actions'
 import Card from '../../card/Card'
 import { useRealEstateContext } from '../../../context/realEstatesContext/RealEstateContext'
 import RealEstateDetails from './components/RealEstateDetails'

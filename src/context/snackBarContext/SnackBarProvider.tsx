@@ -1,17 +1,10 @@
-import React from 'react'
-import { Toast } from 'react-bootstrap'
+import { useState, type FC, type PropsWithChildren } from 'react'
 import SnackBarContext from './SnackBarContext'
 import SnackBar from '../../components/snackBar/SnackBar'
 
-interface SnackBarContextProviderProps {
-  children: React.ReactNode
-}
-
-const SnackBarProvider: React.FC<SnackBarContextProviderProps> = ({
-  children,
-}) => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false)
-  const [message, setMessage] = React.useState<string>('')
+const SnackBarProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [message, setMessage] = useState<string>('')
 
   const showSnackBar = (text: string) => {
     setMessage(text)

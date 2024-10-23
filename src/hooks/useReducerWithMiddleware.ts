@@ -8,6 +8,7 @@ import {
   useReducer,
 } from 'react'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const useReducerWithMiddleware = <R extends Reducer<any, any>>(
   reducer: Reducer<ReducerState<R>, ReducerAction<R>>,
   initialState: ReducerState<R>,

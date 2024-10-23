@@ -1,13 +1,13 @@
 import type { sortDirectionType } from '../components/pages/Favorites/utils/utils'
 
 type sortFn = (
-  arr: any[],
+  arr: unknown[],
   sortKey: string,
   direction: sortDirectionType
-) => any[]
+) => unknown[]
 
 export const sortByName: sortFn = (arr, sortKey, direction) => {
-  return [...arr].sort((a: any, b: any): any => {
+  return [...arr].sort((a: unknown, b: unknown) => {
     if (direction === 'asc') {
       return a[sortKey].toString().localeCompare(b[sortKey])
     }

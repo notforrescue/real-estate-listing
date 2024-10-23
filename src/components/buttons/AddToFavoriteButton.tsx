@@ -4,7 +4,7 @@ import { StarFill, Star } from 'react-bootstrap-icons'
 import { Button } from 'react-bootstrap'
 
 interface IAddToFavoriteButtonProps {
-  onClick: (target: any) => void
+  onClick: (target: unknown) => void
   isChecked: boolean
 }
 

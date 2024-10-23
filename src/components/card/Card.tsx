@@ -7,7 +7,7 @@ interface ICardProps {
   price: number
   imageUrl: string
   isChecked: boolean
-  onAddToFavoriteButtonClick: (target: any) => void
+  onAddToFavoriteButtonClick: (target: unknown) => void
   titleElement?: string | React.ReactNode
   hideImage?: boolean
 }

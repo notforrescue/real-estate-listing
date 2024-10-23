@@ -7,7 +7,7 @@ import { useCallback, useEffect, useState } from 'react'
  * @param key string
  * @param defaultValue
  */
-export function useStorage<T = {}>(
+export function useStorage<T = object>(
   storage: Storage,
   key: string,
   defaultValue: T
@@ -32,13 +32,13 @@ export function useStorage<T = {}>(
 /**
  * Hook for accessing local storage.
  */
-export function useLocalStorage<T = any>(key: string, defaultValue: T) {
+export function useLocalStorage<T = object>(key: string, defaultValue: T) {
   return useStorage(localStorage, key, defaultValue)
 }
 
 /**
  * Hook for accessing session storage.
  */
-export function useSessionStorage<T = any>(key: string, defaultValue: T) {
+export function useSessionStorage<T = object>(key: string, defaultValue: T) {
   return useStorage(sessionStorage, key, defaultValue)
 }

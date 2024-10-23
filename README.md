@@ -21,4 +21,7 @@ npm run lint
 # Run the app in production
 npm run build
 npm run start
+
+# You can also run the dev app in a docker container
+docker-compose up --build
 ```

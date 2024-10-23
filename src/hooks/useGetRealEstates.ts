@@ -6,20 +6,25 @@ import { useSessionStorage } from './useLocalStorage'
 import { setRealEstates } from '../store/realEstatesStore/actions'
 import { useRealEstateContext } from '../context/realEstatesContext/RealEstateContext'
 import useSnackBar from '../context/snackBarContext/useSnackBar'
+import { IRealEstateWithFavorite } from './useGetFavoriteRealEstates'
+import mergeRealEstatesWithCached from '../utils/mergeWithCached'
 
 const useGetRealEstates = () => {
   const { data, error } = useGetData<IRealEstateResponse>(getRealEstates)
   const { state, dispatcher } = useRealEstateContext()
   const { showSnackBar } = useSnackBar()
 
-  const { state: storageState } = useSessionStorage<IRealEstateResponse | null>(
-    'realEstates',
-    null
-  )
+  const { state: storageState } = useSessionStorage<{
+    ads: IRealEstateWithFavorite[]
+  } | null>('realEstates', null)
 
   useEffect(() => {
     if (data) {
-      dispatcher(setRealEstates({ ...data, ...storageState }))
+      dispatcher(
+        setRealEstates({
+          ads: mergeRealEstatesWithCached(data.ads, storageState?.ads),
+        })
+      )
     }
   }, [data, storageState])
 

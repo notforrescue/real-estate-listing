@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react'
+import React, { type FC, type PropsWithChildren } from 'react'
 import { formatCurrency } from '../../utils/numberFormatter'
 import AddToFavoriteButton from '../buttons/AddToFavoriteButton'
 

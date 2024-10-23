@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap'
 import Icon from '../../../icon/Icon'
 import { SortDown, SortUp } from 'react-bootstrap-icons'
-import { FC } from 'react'
+import { type FC } from 'react'
 import { sortDirectionType } from '../utils/utils'
 
 interface ISortButtonProps {

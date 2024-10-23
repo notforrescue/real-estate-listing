@@ -1,6 +1,6 @@
 import { type NavLinkProps, NavLink } from 'react-router-dom'
 import { type Icon as IconType } from 'react-bootstrap-icons'
-import { FC, PropsWithChildren, ReactElement } from 'react'
+import type { FC, PropsWithChildren, ReactElement } from 'react'
 import Icon from '../icon/Icon'
 
 interface INavigationItemProps {

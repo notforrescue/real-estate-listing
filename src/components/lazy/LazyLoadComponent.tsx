@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, Suspense } from 'react'
+import { type FC, type PropsWithChildren, Suspense } from 'react'
 
 const LazyLoadComponent: FC<PropsWithChildren> = ({ children }) => {
   return <Suspense fallback={'Loading...'}>{children}</Suspense>

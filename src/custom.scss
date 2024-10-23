@@ -15,6 +15,10 @@ $primary: #323ec8;
   --bs-font-sans-serif: 'Red Hat Display';
 }
 
+.app {
+  min-height: 100vh;
+}
+
 .list-card {
   height: 180px;
 
@@ -40,37 +44,6 @@ h2 {
     &:hover {
       color: $primary;
     }
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .list-card {
-    height: 270px;
-
-    .list-card-image {
-      height: 140px;
-    }
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.2em;
-  }
-
-  h5 {
-    font-size: 1em;
-  }
-
-  .padding-md-0 {
-    padding: 0;
-  }
-
-  .detail-image,
-  .details-page .card {
-    border-radius: 0 !important;
   }
 }
 
@@ -129,6 +102,33 @@ h2 {
   }
 }
 
-.app {
-  min-height: 100vh;
+@include media-breakpoint-down(md) {
+  .list-card {
+    height: 270px;
+
+    .list-card-image {
+      height: 140px;
+    }
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  .padding-md-0 {
+    padding: 0;
+  }
+
+  .detail-image,
+  .details-page .card {
+    border-radius: 0 !important;
+  }
 }

@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import prettyCssModules from 'vite-plugin-pretty-css-modules'
-import mockSimple, { MockHandler } from 'vite-plugin-mock-simple'
+import mockSimple from 'vite-plugin-mock-simple'
 import mockServer from './mockServer'
 import macrosPlugin from 'vite-plugin-babel-macros'
 

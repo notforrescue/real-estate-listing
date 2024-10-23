@@ -9,12 +9,14 @@ const Header: FC = () => {
   const { status, toggleStatus } = useToggle()
 
   return (
-    <header className={'app-header rounded-bottom bg-white shadow'}>
+    <header
+      className={'app-header rounded-bottom bg-white shadow'}
+      style={{ minHeight: '50px' }}
+    >
       <Navbar
         collapseOnSelect
         expand="lg"
         className={'d-flex d-md-none align-items-center'}
-        style={{ minHeight: '65px' }}
       >
         <Navbar.Toggle
           className={'bg-white border-0 shadow-none'}

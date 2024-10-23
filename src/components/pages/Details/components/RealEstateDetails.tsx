@@ -34,12 +34,14 @@ const RealEstateDetails: FC<IRealEstateDetailsProps> = ({ realEstate }) => {
       <div className={'rounded p-4 bg-light w-100 mb-4'}>
         <p>{realEstate.description}</p>
       </div>
-      <Button
-        className={'btn-lg btn-secondary px-5'}
-        onClick={() => toggleModal()}
-      >
-        Kapcsolat
-      </Button>
+      <div className={'d-flex w-100 justify-content-end'}>
+        <Button
+          className={'btn-lg btn-secondary w-auto px-5'}
+          onClick={() => toggleModal()}
+        >
+          Kapcsolat
+        </Button>
+      </div>
       <ContactModal show={isModalShown} toggleShow={toggleModal} />
     </>
   )

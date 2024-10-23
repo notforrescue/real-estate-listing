@@ -49,14 +49,16 @@ const Card: FC<PropsWithChildren<ICardProps>> = ({
                     {titleElement || title}
                   </h2>
                   <h5 className="fw-bolder">{formatCurrency(price)}</h5>
-                  {children}
                 </div>
-                <div className={'col-2 d-flex justify-content-end'}>
-                  <AddToFavoriteButton
-                    onClick={onAddToFavoriteButtonClick}
-                    isChecked={isChecked}
-                  />
+                <div className={'col-2'}>
+                  <div className={'d-flex justify-content-end'}>
+                    <AddToFavoriteButton
+                      onClick={onAddToFavoriteButtonClick}
+                      isChecked={isChecked}
+                    />
+                  </div>
                 </div>
+                {children}
               </div>
             </div>
           </div>

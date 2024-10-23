@@ -51,13 +51,14 @@ const Details: FC = () => {
           <div className={'container-fluid padding-md-0'}>
             <Button
               className={
-                'bg-dark btn btn-square-md shadow border-0 rounded-1 p-0 position-absolute'
+                'btn btn-square-md shadow border-0 rounded-1 p-0 position-absolute  d-block d-md-none'
               }
               style={{
                 width: '34px',
                 height: '34px',
                 top: '40px',
                 left: '20px',
+                background: '#485563',
               }}
               onClick={() => navigate(-1)}
             >
@@ -102,7 +103,9 @@ const Details: FC = () => {
         </div>
       </div>
 
-      <Footer></Footer>
+      <div className={'d-none d-md-flex'}>
+        <Footer></Footer>
+      </div>
     </>
   )
 }

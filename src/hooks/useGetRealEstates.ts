@@ -7,7 +7,7 @@ import { setRealEstates } from '../store/realEstatesStore/actions'
 import { useRealEstateContext } from '../context/realEstatesContext/RealEstateContext'
 import useSnackBar from '../context/snackBarContext/useSnackBar'
 import { IRealEstateWithFavorite } from './useGetFavoriteRealEstates'
-import mergeRealEstatesWithCached from '../utils/mergeWithCached'
+import mergeRealEstateResponseWithStorage from '../utils/mergeRealEstateResponseWithStorage'
 
 const useGetRealEstates = () => {
   const { data, error } = useGetData<IRealEstateResponse>(getRealEstates)
@@ -22,7 +22,11 @@ const useGetRealEstates = () => {
     if (data) {
       dispatcher(
         setRealEstates({
-          ads: mergeRealEstatesWithCached(data.ads, storageState?.ads),
+          /**
+           * To be able to preserve consistency between API response and browser storage
+           * we need to merge the two data sets.
+           */
+          ads: mergeRealEstateResponseWithStorage(data.ads, storageState?.ads),
         })
       )
     }

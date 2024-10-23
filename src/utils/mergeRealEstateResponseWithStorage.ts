@@ -1,7 +1,7 @@
 import { IRealEstateResponse } from '../api/realEstate/types'
 import { IRealEstateWithFavorite } from '../hooks/useGetFavoriteRealEstates'
 
-const mergeRealEstatesWithCached = (
+const mergeRealEstateResponseWithStorage = (
   sourceArr: IRealEstateResponse['ads'],
   cachedArr: IRealEstateWithFavorite[]
 ) => {
@@ -19,4 +19,4 @@ const mergeRealEstatesWithCached = (
   })
 }
 
-export default mergeRealEstatesWithCached
+export default mergeRealEstateResponseWithStorage

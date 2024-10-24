@@ -10,8 +10,11 @@ const mergeRealEstateResponseWithStorage = (
       const cachedElem = cachedArr.find((elem) => elem.adId === realEstate.adId)
 
       if (cachedElem) {
-        realEstate['addedToFavoritesDate'] = cachedElem['addedToFavoritesDate']
-        realEstate['status'] = cachedElem['status']
+        return {
+          ...realEstate,
+          addedToFavoritesDate: cachedElem['addedToFavoritesDate'],
+          status: cachedElem['status'],
+        }
       }
     }
 
